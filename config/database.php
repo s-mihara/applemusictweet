@@ -66,10 +66,10 @@ return [
 
         'pgsql' => [
             'driver'   => 'pgsql',
-            'host'     => env('DB_HOST', 'localhost'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host'     => env('DB_HOST', '192.168.56.10'),
+            'database' => env('DB_DATABASE', 's.mihara'),
+            'username' => env('DB_USERNAME', 's.mihara'),
+            'password' => env('DB_PASSWORD', 'heroku_test'),
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',
