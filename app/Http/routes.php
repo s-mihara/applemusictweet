@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'ListController@index');
+
+
+
+/*
+  デフォルトのやつ、一応welcomeで残しとく
+*/
+Route::get('welcome/', function () {
+  return view('welcome');
 });
+
