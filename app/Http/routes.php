@@ -12,8 +12,8 @@
 */
 
 Route::get('/', 'ListController@index');
-
-
+Route::get('/search', 'ListController@search');
+Route::get('/detailModal', 'ListController@detailModal');
 
 /*
   デフォルトのやつ、一応welcomeで残しとく
@@ -21,4 +21,3 @@ Route::get('/', 'ListController@index');
 Route::get('welcome/', function () {
   return view('welcome');
 });
-

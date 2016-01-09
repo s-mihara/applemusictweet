@@ -37,7 +37,7 @@
     				<span class="icon-bar"></span>
     				<span class="icon-bar"></span>
     			</button>
-    			<a class="navbar-brand" href="#">
+    			<a class="navbar-brand" href="/">
     				AppleMusicTweet
     			</a>
     		</div>
@@ -72,9 +72,9 @@
     			</ul>
 
 
-    			<form class="navbar-form navbar-right" role="search">
+    			<form class="navbar-form navbar-right" action="search" role="search" method="get">
     				<div class="form-group">
-    					<input type="text" class="form-control" placeholder="Search">
+    					<input type="text" class="form-control" placeholder="Search" name="search">
     				</div>
     				<button type="submit" class="btn btn-info"><i class="glyphicon glyphicon-search"></i>  </button>
     			</form>
@@ -85,7 +85,7 @@
     <ul class="nav nav-pills" >
 
       @foreach ($results as $result)
-        <button class="btn btn-default" type="button" style="margin:5px;"  data-toggle="modal" data-target="#myModal">
+        <button class="btn btn-default parent-title" type="button" style="margin:5px;" value="{{ $result->parent_title }}">
           {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
         </button>
       @endforeach
@@ -96,63 +96,69 @@
         </div>
       </nav>
 
-    <!--
+        <!--
+            Modalの中身
+          -->
+          <div id="title-detail" class="modal fade">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">Stone Roses</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="container-fluid">
 
-      Modalの中身
-      ・フェードインさせるときはfadeをつける
-      ・ヘッダー、ボディ、フッターに分けることができる
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                </div>
 
-    -->
-    <div id="myModal" class="modal fade">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">アーティスト名</h4>
-          </div>
-          <div class="modal-body">
-    <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-3 col-sm-6 col-md-2  my-media-1">ああ </div>
-      <div class="col-xs-3 col-sm-2 col-md-2  my-media-2">いい </div>
-      <div class="col-xs-3 col-sm-2 col-md-2  my-media-3">うう</div>
-      <div class="col-xs-3 col-sm-2 col-md-6 my-media-4"> ええ</div>
-      <div class="col-xs-3 col-sm-2 col-md-2  my-media-3"> おお</div>
-      <div class="col-xs-3 col-sm-2 col-md-6 my-media-4"> かかか</div>
-    </div>
-  </div>
+              </div>
+              </div>
+            </div>
 
-  <div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-3 col-sm-6 col-md-2  my-media-1">ああ </div>
-    <div class="col-xs-3 col-sm-2 col-md-2  my-media-2">ああ </div>
-    <div class="col-xs-3 col-sm-2 col-md-2  my-media-3"> っｄ</div>
-    <div class="col-xs-3 col-sm-2 col-md-6 my-media-4"> っっっｇ</div>
-  </div>
-</div>
 
-<div class="container-fluid">
-<div class="row">
-  <div class="col-xs-3 col-sm-6 col-md-2  my-media-1">ああ </div>
-  <div class="col-xs-3 col-sm-2 col-md-2  my-media-2">ああ </div>
-  <div class="col-xs-3 col-sm-2 col-md-2  my-media-3"> っｄ</div>
-  <div class="col-xs-3 col-sm-2 col-md-6 my-media-4"> っっっｇ</div>
-</div>
-</div>
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script>
+    $(function(){
+      $(function(){
+      $('#modal-trigger').hide();
+      $('.parent-title').on('click', function(elm){
+        var query = "parentTitle="+encodeURIComponent($(this).val());
+        $.ajax({
+            type: "GET",
+            url: "detailModal",
+            data: query,
+            async: false,
+            success: function(msg){
+              if(msg=='error') {
+                alert("読み込み失敗m(__)m");
+                return false;
+              }
+              $("#title-detail").html(msg);
+              //alert( "sucusess");
+            },
+
+            error: function(xhr, status, error) {
+              alert("読み込み失敗m(__)m");
+              return false;
+            }
+        });
+        $('.modal').modal('show');
+      });
+    });
+    });
+    </script>
+
+
 
 
   </body>
