@@ -12,17 +12,23 @@
           <div class="modal-body">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-xs-3 col-sm-6 col-md-4  my-media-1"><strong>タイトル</strong></div>
-                <div class="col-xs-3 col-sm-2 col-md-3  my-media-2"><strong>ツイート日▼</strong></div>
-                <div class="col-xs-3 col-sm-2 col-md-3  my-media-3"><strong>名前</strong></div>
-                <div class="col-xs-3 col-sm-2 col-md-2 my-media-4"><strong>ID</strong></div>
+                <div class="col-xs-3 col-sm-6 col-md-4  "><strong>タイトル</strong></div>
+                <div class="col-xs-3 col-sm-2 col-md-3  "><strong>ツイート日▼</strong></div>
+                <div class="col-xs-3 col-sm-2 col-md-3  "><strong>名前</strong></div>
+                <div class="col-xs-3 col-sm-2 col-md-2  "><strong>ID</strong></div>
               </div>
               @foreach ($results as $result)
                 <div class="row">
-                  <div class="col-xs-3 col-sm-6 col-md-4  my-media-1">{{ $result['title'] }}</div>
-                  <div class="col-xs-3 col-sm-2 col-md-3  my-media-2">{{ $result['tweet_date'] }}</div>
-                  <div class="col-xs-3 col-sm-2 col-md-3  my-media-3">{{ $result['t_user_name'] }}</div>
-                  <div class="col-xs-3 col-sm-2 col-md-2 my-media-4">@ {{ $result['t_user_screen_name']}}</div>
+                  <div class="col-xs-3 col-sm-6 col-md-4  ">
+                    @if ($result['url_first'] != null and $result['url_first'] != "")
+                    <a href="{{ $result['url_first'] }}" target="_blank" style="font-color:brack;">{{ $result['title'] }}</a>
+                    @else
+                    {{ $result['title'] }}
+                    @endif
+                  </div>
+                  <div class="col-xs-3 col-sm-2 col-md-3  ">{{ $result['tweet_date'] }}</div>
+                  <div class="col-xs-3 col-sm-2 col-md-3  ">{{ $result['t_user_name'] }}</div>
+                  <div class="col-xs-3 col-sm-2 col-md-2  ">@ {{ $result['t_user_screen_name']}}</div>
                 </div>
               @endforeach
             </div>
