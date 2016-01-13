@@ -51,12 +51,13 @@
       		<div class="collapse navbar-collapse" id="navbarEexample3">
       			<form class="navbar-form " action="search" role="search" method="get">
       				<div class="form-group">
-      					<input type="text" class="form-control" placeholder="Search" name="search">
+      					<input type="text" class="form-control" placeholder="Search" name="search" value="{{$inputs['word']}}">
                 <select  class="form-control" name="period">
-                  <option value=0>期間指定なし</option>
-                  <option value=0>24時間以内</option>
-                  <option value=0>1週間以内</option>
-                  <option value=0>1ヶ月以内</option>
+                  <option value=-1>期間指定なし</option>
+                  <!--<option value=0>24時間以内</option>
+                  <option value=1>1週間以内</option>
+                  <option value=2>1ヶ月以内</option>
+                -->
                 </select>
       				</div>
       				<button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i>  </button>
@@ -73,10 +74,17 @@
                {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
              </button>
              @endforeach
-          </div>
+             @if (count($results) === 1000)
+              </br>
+              <button class="btn btn-warning" type="button" >
+                表示件数が多いので省略されました。(1,000件まで表示されます)
+              </button>
+             @endif
+            </div>
+
           <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" >
             <div class="ad-zone" style='width:300px;height:250px;background-color:gray;'><dvi>
-            
+
             </div>
             <div class="ad-zone" style='width:300px;height:20px;'>
 

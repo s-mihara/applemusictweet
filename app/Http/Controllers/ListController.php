@@ -13,8 +13,14 @@ class ListController extends Controller {
      */
     public function index()
     {
-        $results = DB::select("select parent_title,count from m_parent_title order by count desc");
-        return view('list' ,['results' => $results]);
+        $results = DB::select("select parent_title,count from m_parent_title order by count desc limit 1000");
+
+        // 初期表示フォーム
+        $inputs = $array = array(
+                          "word" => '',
+                          "period" => ''
+                        );
+        return view('list' ,['inputs' => $inputs,'results' => $results]);
     }
 
     /**
@@ -25,9 +31,17 @@ class ListController extends Controller {
     public function search()
     {
         $word = Input::get('search');
+        $period = Input::get('period');
+
         $wordLike = '%' . $word  . '%';
-        $results = DB::select("select parent_title,count from m_parent_title where parent_title ilike ? order by count desc",[$wordLike]);
-        return view('list' ,['results' => $results]);
+        $results = DB::select("select parent_title,count from m_parent_title where parent_title ilike ? order by count desc  limit 1000",[$wordLike]);
+
+        $inputs = $array = array(
+                          "word" => $word,
+                          "period" => $period
+                        );
+
+        return view('list' ,['inputs' => $inputs,'results' => $results]);
     }
 
     /**
