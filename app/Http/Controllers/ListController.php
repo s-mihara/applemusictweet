@@ -20,7 +20,12 @@ class ListController extends Controller {
                           "word" => '',
                           "period" => ''
                         );
-        return view('list' ,['inputs' => $inputs,'results' => $results]);
+        if ($this->_isSmartPhone()) {
+          $blade = 'sp_list';
+        } else {
+          $blade = 'list';
+        }
+        return view($blade ,['inputs' => $inputs,'results' => $results]);
     }
 
     /**
@@ -41,7 +46,12 @@ class ListController extends Controller {
                           "period" => $period
                         );
 
-        return view('list' ,['inputs' => $inputs,'results' => $results]);
+        if ($this->_isSmartPhone()) {
+          $blade = 'sp_list';
+        } else {
+          $blade = 'list';
+        }
+        return view($blade ,['inputs' => $inputs,'results' => $results]);
     }
 
     /**
@@ -62,5 +72,16 @@ class ListController extends Controller {
         return view('detailModal' ,['results' => $result]);;
     }
 
+    /**
+
+    */
+
+    private function _isSmartPhone () {
+      $ua = $_SERVER['HTTP_USER_AGENT'];
+      return  ((strpos($ua, 'Android') !== false) && (strpos($ua, 'Mobile') !== false)
+      || (strpos($ua, 'iPhone') !== false)
+      || (strpos($ua, 'Windows Phone') !== false)) ;
+
+    }
 
 }

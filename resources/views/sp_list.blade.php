@@ -67,8 +67,20 @@
 
 
       <section class="container" >
+        <div class="">
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- 320×100 -->
+          <ins class="adsbygoogle"
+               style="display:inline-block;width:320px;height:100px"
+               data-ad-client="ca-pub-5130603784545057"
+               data-ad-slot="8954345126"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+
         <div class="row">
-           <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+
              @foreach ($results as $result)
              <button class="btn btn-default parent-title" type="button" style="margin:5px;" value="{{ $result->parent_title }}">
                {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
@@ -80,39 +92,6 @@
                 表示件数が多いので省略されました。(1,000件まで表示されます)
               </button>
              @endif
-            </div>
-
-          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" >
-            <div class="ad-zone"><dvi>
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-              <!-- 300×250 -->
-              <ins class="adsbygoogle"
-                   style="display:inline-block;width:300px;height:250px"
-                   data-ad-client="ca-pub-5130603784545057"
-                   data-ad-slot="6559281925"></ins>
-              <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-
-
-            </div>
-            <div class="ad-zone" style='width:300px;height:20px;'>
-
-            </div>
-          <div class="ad-zone" >
-
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- 300×600 -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:300px;height:600px"
-                 data-ad-client="ca-pub-5130603784545057"
-                 data-ad-slot="8036015127"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-
-          </div>
-        </div>
       </section>
 
         <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" >
