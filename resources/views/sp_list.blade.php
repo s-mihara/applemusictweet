@@ -88,7 +88,7 @@
              @endforeach
              @if (count($results) === 1000)
               </br>
-              <button class="btn btn-warning" type="button" >
+              <button class="btn btn-warning" type="button" style="margin:5px;white-space: normal;">
                 表示件数が多いので省略されました。(1,000件まで表示されます)
               </button>
              @endif
