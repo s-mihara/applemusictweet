@@ -82,7 +82,7 @@
         <div class="row">
 
              @foreach ($results as $result)
-             <button class="btn btn-default parent-title" type="button" style="margin:5px;" value="{{ $result->parent_title }}">
+             <button class="btn btn-default parent-title" type="button" style="margin:5px;white-space: normal;" value="{{ $result->parent_title }}">
                {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
              </button>
              @endforeach
