@@ -13,7 +13,8 @@
 
 Route::get('/', 'ListController@index');
 Route::get('/search', 'ListController@search');
-Route::get('/detailModal', 'ListController@detailModal');
+Route::get('/detailModal', 'DetailController@detailModal');
+Route::get('/detail/{parentTitle}', 'DetailController@index');
 
 /*
   デフォルトのやつ、一応welcomeで残しとく

@@ -55,24 +55,6 @@ class ListController extends Controller {
     }
 
     /**
-     * 詳細表示
-     *
-     * @return Response
-     */
-    public function detailModal()
-    {
-        $parentTitle = Input::get('parentTitle');
-        $results = DB::select("select detail from m_parent_title where parent_title = ?",[$parentTitle])[0];
-        if (!count($results) == 1) {
-          echo 'error';
-          return ;
-        }
-        $result = json_decode($results->detail,true);
-        array_multisort($result,SORT_DESC ,array_column($result, 'tweet_date'));
-        return view('detailModal' ,['results' => $result]);;
-    }
-
-    /**
 
     */
 

@@ -135,29 +135,9 @@
 
       <script>
       $(function(){
-        $('#modal-trigger').hide();
         $('.parent-title').on('click', function(elm){
-          var query = "parentTitle="+encodeURIComponent($(this).val());
-          $.ajax({
-              type: "GET",
-              url: "detailModal",
-              data: query,
-              async: false,
-              success: function(msg){
-                if(msg=='error') {
-                  alert("読み込み失敗m(__)m");
-                  return false;
-                }
-                $("#title-detail").html(msg);
-                //alert( "sucusess");
-              },
-
-              error: function(xhr, status, error) {
-                alert("読み込み失敗m(__)m");
-                return false;
-              }
-          });
-          $('.modal').modal('show');
+          var url = "detail/"+encodeURIComponent($(this).val());
+          window.location.href=url;
         });
       });
 
