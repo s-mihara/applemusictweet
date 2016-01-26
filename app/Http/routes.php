@@ -15,6 +15,8 @@ Route::get('/', 'ListController@index');
 Route::get('/search', 'ListController@search');
 Route::get('/detailModal', 'DetailController@detailModal');
 Route::get('/detail/{parentTitle}', 'DetailController@index');
+Route::get('/sitemap.xml', 'SitemapController@index');
+
 
 /*
   デフォルトのやつ、一応welcomeで残しとく
