@@ -68,15 +68,7 @@
 
       <section class="container" >
         <div class="">
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <!-- 320×100 -->
-          <ins class="adsbygoogle"
-               style="display:inline-block;width:320px;height:100px"
-               data-ad-client="ca-pub-5130603784545057"
-               data-ad-slot="8954345126"></ins>
-          <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
+          @include('ad.sp_1')
         </div>
 
         <div class="row">
@@ -142,15 +134,6 @@
       });
 
       </script>
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-72394811-1', 'auto');
-        ga('send', 'pageview');
-
-      </script>
+        @include('ad.google_analytics')
     </body>
   </html>

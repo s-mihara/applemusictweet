@@ -83,36 +83,8 @@
             </div>
 
           <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" >
-            <div class="ad-zone"><dvi>
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-              <!-- 300×250 -->
-              <ins class="adsbygoogle"
-                   style="display:inline-block;width:300px;height:250px"
-                   data-ad-client="ca-pub-5130603784545057"
-                   data-ad-slot="6559281925"></ins>
-              <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-
-
-            </div>
-            <div class="ad-zone" style='width:300px;height:20px;'>
-
-            </div>
-          <div class="ad-zone" >
-
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- 300×600 -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:300px;height:600px"
-                 data-ad-client="ca-pub-5130603784545057"
-                 data-ad-slot="8036015127"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-
+            @include('ad.pc_side')
           </div>
-        </div>
       </section>
 
         <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" >
@@ -183,15 +155,6 @@
       });
 
       </script>
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-72394811-1', 'auto');
-        ga('send', 'pageview');
-
-      </script>
+      @include('ad.google_analytics')
     </body>
   </html>
