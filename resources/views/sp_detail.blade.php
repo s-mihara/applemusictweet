@@ -44,13 +44,23 @@
 
         <div><a href="/" style="font-size:60%">一覧</a>　 > 「{{$parentTitle}}」 のタイトル<div>
         <table class="table">
+          <?php $i=0 ?>
           @foreach ($results as $result)
+          <?php $i++ ?>
           <tr class="active"><td style="font-size:70%;">{{ $result['tweet_date'] }}　＠{{ $result['t_user_screen_name']}} {{ $result['t_user_name'] }}　</td></tr>
           <tr><td>
             @if ($result['url_first'] != null and $result['url_first'] != "")
             <a href="{{ $result['url_first'] }}" target="_blank" style="font-color:brack;">{{ $result['title'] }}</a>
             @else
             {{ $result['title'] }}
+            @endif
+
+            @if ($i === 10 | $i === 20)
+            </td></tr>
+        </table>
+            <div>  @include('ad.sp_res_1') </div>
+        <table class="table">
+              <tr><td>
             @endif
           </td></tr>
         @endforeach

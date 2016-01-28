@@ -42,11 +42,17 @@
         </div>
 
         <div class="row">
-
+            <?php $i=0; ?>
              @foreach ($results as $result)
-             <button class="btn btn-default parent-title" type="button" style="margin:5px;white-space: normal;" value="{{ $result->parent_title }}">
-               {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
-             </button>
+              <a href="/detail/{{ rawurlencode($result->parent_title) }}" class="btn btn-default parent-title" type="button" style="margin:5px;white-space: normal;" value="{{ $result->parent_title }}">
+                {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
+              </a>
+              <?php $i++; ?>
+              @if ($i === 25 || $i === 50)
+        </div>
+                <div>@include('ad.sp_res_1')</div>
+        <div class="row">
+              @endif
              @endforeach
              @if (count($results) === 1000)
               </br>
@@ -81,12 +87,7 @@
                 </div>
               </div>
       <script>
-      $(function(){
-        $('.parent-title').on('click', function(elm){
-          var url = "detail/"+encodeURIComponent($(this).val());
-          window.location.href=url;
-        });
-      });
+
 
       </script>
         @include('ad.google_analytics')
