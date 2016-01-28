@@ -50,7 +50,9 @@
           <tr class="active"><td style="font-size:70%;">{{ $result['tweet_date'] }}　＠{{ $result['t_user_screen_name']}} {{ $result['t_user_name'] }}　</td></tr>
           <tr><td>
             @if ($result['url_first'] != null and $result['url_first'] != "")
-            <a href="{{ $result['url_first'] }}" target="_blank" style="font-color:brack;">{{ $result['title'] }}</a>
+            <a href="{{ $result['url_first'] }}" target="_blank" style="font-color:brack;">
+              <i class="glyphicon glyphicon-play"></i>
+            　{{ $result['title'] }}</a>
             @else
             {{ $result['title'] }}
             @endif
