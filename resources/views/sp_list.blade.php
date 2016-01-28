@@ -44,7 +44,7 @@
         <div class="row">
             <?php $i=0; ?>
              @foreach ($results as $result)
-              <a href="/detail/{{ rawurlencode($result->parent_title) }}" class="btn btn-default parent-title" type="button" style="margin:5px;white-space: normal;" value="{{ $result->parent_title }}">
+              <a href="/detail/{{ rawurlencode($result->parent_title) }}" class="btn btn-default" style="margin:5px;white-space: normal;" >
                 {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
               </a>
               <?php $i++; ?>

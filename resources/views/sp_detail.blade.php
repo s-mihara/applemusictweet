@@ -55,7 +55,7 @@
             {{ $result['title'] }}
             @endif
 
-            @if ($i === 10 | $i === 20)
+            @if ($i === 12 | $i === 24)
             </td></tr>
         </table>
             <div>  @include('ad.sp_res_1') </div>

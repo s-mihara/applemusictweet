@@ -40,9 +40,9 @@
         <div class="row">
            <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
              @foreach ($results as $result)
-             <button class="btn btn-default parent-title" type="button" style="margin:5px;" value="{{ $result->parent_title }}">
+             <a href="/detail/{{ rawurlencode($result->parent_title) }}"  class="btn btn-default"  style="margin:5px;" ">
                {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
-             </button>
+             </a>
              @endforeach
              @if (count($results) === 1000)
               </br>
