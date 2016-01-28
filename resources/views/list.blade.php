@@ -1,38 +1,8 @@
   <!DOCTYPE html>
   <html lang="jp">
     <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>AppleMusicTweet ｜ Apple MusicでTweetされた情報を検索</title>
-
-      <!-- Bootstrap -->
-      <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-
-      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
-      <style type="text/css">
-      <!--
-      body {
-          background-color: #f4f8f9;
-          padding-top: 60px;
-          padding-bottom: 60px;
-      }
-      .ad-zone {
-          float: right;
-      }
-      .navbar-inverse {
-        /*background-color: #3e6107;*/
-        /*background-image: url("img/IMG_1171.JPG");*/
-      }
-
-      -->
-      </style>
+      @include('common.head')
     </head>
     <body>
       <nav class="navbar navbar-inverse navbar-fixed-top container">
@@ -86,15 +56,7 @@
             @include('ad.pc_side')
           </div>
       </section>
-
-        <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" >
-          <div class="container" >
-            <div style="float:right;">
-            powerd by <a href="https://twitter.com/mihashun" target="_blank">@mihashun</a>
-            </div>
-          </div>
-        </nav>
-
+      @include('common.footer')
           <!--
               Modalの中身
             -->
@@ -121,10 +83,6 @@
 
 
 
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
       <script>
       $(function(){

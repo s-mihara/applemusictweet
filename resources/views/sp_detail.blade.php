@@ -91,13 +91,7 @@
     </table>
     </section>
 
-      <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" >
-        <div class="container" >
-          <div style="float:right;">
-          powerd by <a href="https://twitter.com/mihashun" target="_blank">@mihashun</a>
-          </div>
-        </div>
-      </nav>
+    @include('common.footer')
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
