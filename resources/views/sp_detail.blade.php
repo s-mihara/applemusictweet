@@ -37,12 +37,14 @@
 
 
     <section class="container" >
-
-      <div class="">
+      <div >
+        「<span style="font-weight:bold;font-size:105%;">{{$parentTitle}}</span>」 のタイトル
+      <div>
+      <div style="margin-top:5px;" >
         @include('ad.sp_res_1')
       </div>
 
-        <div><a href="/" style="font-size:60%">一覧</a>　 > 「{{$parentTitle}}」 のタイトル<div>
+
         <table class="table">
           <?php $i=0 ?>
           @foreach ($results as $result)
