@@ -28,11 +28,12 @@
               </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse">
-              <div class="panel-body">
-                <ul>
-                  <li><a href="/playlist">プレイリスト</a></li>
-                  <li><a href="/all">全て</a></li>
-                </ul>
+              <ul class="list-group">
+               <a class="list-group-item" href="/all">すべて</a>
+               <a class="list-group-item" href="/playlist">プレイリストの全ジャンルを表示</a>
+               <a class="list-group-item" href="/random">ランダムに50件表示</a>
+              </ul>
+              <div class="panel-footer">
                 <i class="glyphicon glyphicon-info-sign"></i> 詳細な検索は、上部の
                 <i class="glyphicon glyphicon-menu-hamburger"></i>
                 で！

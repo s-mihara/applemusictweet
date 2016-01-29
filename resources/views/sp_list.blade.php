@@ -1,16 +1,27 @@
   <!DOCTYPE html>
   <html lang="jp">
     <head>
+      @if (isset($inputs['is_random']))
+      <title>ランダムな検索結果 ｜ アミュツイ</title>
+      <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','ツイート","ランダム">
+      <meta name="description" content="ランダムに検索したAppleMusicのアーティスト/プレイリストジャンルです。">
+      @else
       <title>「{{empty($inputs['word'])? 'すべて':$inputs['word']}} 」の検索結果 ｜ アミュツイ</title>
       <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','ツイート">
       <meta name="description" content="「{{empty($inputs['word'])? 'すべて':$inputs['word']}}」で検索したAppleMusicのアーティスト/プレイリストジャンルです。">
+      @endif
       @include('common.head')
     </head>
     <body>
       @include('common.navbar')
       <section class="container" >
         <div >
+          @if (isset($inputs['is_random']))
+          ランダムに50件表示
+            <a href="random" class="btn btn-default" style="margin:5px;"> <i class="glyphicon glyphicon-refresh"></i> 表示を更新</a>
+          @else
           「<span style="font-weight:bold;font-size:105%;">{{empty($inputs['word'])? 'すべて':$inputs['word']}}</span>」 の検索結果
+          @endif
         <div>
         <div class="">
           @include('ad.sp_res_1')

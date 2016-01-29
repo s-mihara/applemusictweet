@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="collapse navbar-collapse" id="navbar1">
-			<form class="navbar-form " action="search" role="search" method="get">
+			<form class="navbar-form " action="/search" role="search" method="get">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Search" name="search" value="{{$inputs['word']}}">
 					<select  class="form-control" name="period">

@@ -3,6 +3,15 @@
   <url>
     <loc>http://applemusictweet.pyroz.net</loc>
   </url>
+  <url>
+    <loc>http://applemusictweet.pyroz.net/all</loc>
+  </url>
+  <url>
+    <loc>http://applemusictweet.pyroz.net/playlist</loc>
+  </url>
+  <url>
+    <loc>http://applemusictweet.pyroz.net/random</loc>
+  </url>
   @foreach ($results as $result)
   <url>
     <loc>http://applemusictweet.pyroz.net/detail/{{ rawurlencode(str_replace('/', '   sla_escape   ',$result->parent_title)) }}</loc>
