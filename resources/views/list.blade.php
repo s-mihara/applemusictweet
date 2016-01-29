@@ -1,7 +1,9 @@
   <!DOCTYPE html>
   <html lang="jp">
     <head>
-      <title>アミュツイ ｜ Apple MusicでTweetされた情報を検索</title>
+      <title>アミュツイ ｜ Apple Musicの曲やプレイリストをツイートから探す</title>
+      <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','ツイート">
+      <meta name="description" content="AppleMusicにどんな曲やプレイリストがあるのかを探すお手伝いをします。">
       @include('common.head')
     </head>
     <body>

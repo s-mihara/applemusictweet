@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="jp">
   <head>
+    <title>AppleMusicで「{{$parentTitle}}」に関してツイートされた曲/プレイリスト | アミュツイ </title>
+    <meta name="keywords" content="'{{$parentTitle}}','apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す'">
+    <meta name="description" content="AppleMusicには「{{$parentTitle}}」のこんな曲やプレイリストがあります">
     @include('common.head')
-    <title>{{$parentTitle}}のAppleMusicツイート一覧 | アミュツイ </title>
   </head>
   <body>
     @include('common.navbar')

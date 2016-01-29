@@ -1,8 +1,10 @@
   <!DOCTYPE html>
   <html lang="jp">
     <head>
+      <title>アミュツイ ｜ Apple Musicの曲やプレイリストをツイートから探す</title>
+      <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','ツイート'">
+      <meta name="description" content="AppleMusicにどんな曲やプレイリストがあるのかを探すお手伝いをします。">
       @include('common.head')
-      <title>アミュツイ ｜ Apple MusicでTweetされた情報を検索</title>
     </head>
     <body>
       @include('common.navbar')
@@ -20,12 +22,6 @@
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
-
-                <!--
-                  data-toggle : Collapseを起動させる
-                  data-parent : アコーディオン風に閉じたり開いたりするためのもの
-                  href : 指定した場所のパネルを開く
-                -->
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                   おすすめAppleMusic検索 <i style="float:right;"class="glyphicon glyphicon-chevron-down"></i>
                 </a>
@@ -55,7 +51,7 @@
             <div id="collapseTwo" class="panel-collapse collapse">
               <div class="panel-body">
                 ツイッターで「@AppleMusicで聴こう」とつぶやかれたデータを収集して、一覧にしています。</br>
-                アーティスト名からタイトル一覧に飛んで、タイトルを押してください。</br>
+                アーティスト名やプレイリストジャンルからタイトル一覧に飛んで、タイトルを押してください。</br>
                 「ミュージック」アプリが起動して、そのタイトルが表示されます。</br>
                 お気に入りの曲を見つけてください!</br>
                 あと、一部アーティスト名につぶやきと一体化している事がありますが、ご容赦ください。
