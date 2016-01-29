@@ -11,11 +11,17 @@
 |
 */
 
-Route::get('/', 'ListController@index');
+Route::get('/', 'TopController@index');
 Route::get('/search', 'ListController@search');
 Route::get('/detailModal', 'DetailController@detailModal');
 Route::get('/detail/{parentTitle}', 'DetailController@index');
 Route::get('/sitemap.xml', 'SitemapController@index');
+Route::get('/all', function () {
+    return redirect('search?search=');
+});
+Route::get('/playlist', function () {
+    return redirect('search?search=apple%20music');
+});
 
 
 /*

@@ -33,8 +33,13 @@ class DetailController extends Controller {
           //$blade = 'detail';
           $blade = 'sp_detail';
         }
+
+        $inputs = $array = array(
+                          "word" => '',
+                          "period" => ''
+                        );
         //print_r($result);
-        return view($blade ,['results' => $result,'parentTitle' => $parentTitle]);
+        return view($blade ,['inputs' => $inputs,'results' => $result,'parentTitle' => $parentTitle]);
     }
 
     /**

@@ -2,12 +2,14 @@ body {
 		background-color: #f4f8f9;
 		padding-top: 60px;
 		padding-bottom: 60px;
+		font-family:'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif !important;
 }
 .ad-zone {
 		float: right;
 }
 .navbar-inverse {
-
+	/*background-color: #3e6107;*/
+	/*background-image: url("img/IMG_1171.JPG");*/
 }
 a:link { color: #330000; }
 a:visited { color: #845f4b; }
