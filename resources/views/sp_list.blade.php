@@ -2,7 +2,7 @@
   <html lang="jp">
     <head>
       <title>「{{$inputs['word']}} 」の検索結果 ｜ アミュツイ</title>
-      <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す'">
+      <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','ツイート">
       <meta name="description" content="「{{$inputs['word']}}」で検索したAppleMusicのアーティスト/プレイリストジャンルです。">
       @include('common.head')
     </head>
@@ -19,7 +19,7 @@
         <div class="row">
             <?php $i=0; ?>
              @foreach ($results as $result)
-              <a href="/detail/{{ rawurlencode($result->parent_title) }}" class="btn btn-default" style="margin:5px;white-space: normal;" >
+              <a href="/detail/{{ rawurlencode(str_replace('/', '   sla_escape   ',$result->parent_title)) }}" class="btn btn-default" style="margin:5px;white-space: normal;" >
                 {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
               </a>
               <?php $i++; ?>

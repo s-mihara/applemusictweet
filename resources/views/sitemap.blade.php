@@ -5,7 +5,7 @@
   </url>
   @foreach ($results as $result)
   <url>
-    <loc>http://applemusictweet.pyroz.net/detail/{{ rawurlencode($result->parent_title) }}</loc>
+    <loc>http://applemusictweet.pyroz.net/detail/{{ rawurlencode(str_replace('/', '   sla_escape   ',$result->parent_title)) }}</loc>
   </url>
   @endforeach
 </urlset>

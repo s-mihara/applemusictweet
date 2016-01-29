@@ -4,6 +4,8 @@ use App\Http\Controllers\Controller;
 use DB;
 use Input;
 
+define('SLA_ESCAPE', '   sla_escape   ');
+
 class DetailController extends Controller {
 
     /**
@@ -13,10 +15,10 @@ class DetailController extends Controller {
      */
     public function index($parentTitle)
     {
-
+      $parentTitle = str_replace(constant('SLA_ESCAPE'),'/',$parentTitle);
       $results = DB::select("select detail from m_parent_title where parent_title = ?",[$parentTitle]);
       if (!count($results) == 1) {
-        echo 'error';
+        echo 'error(not found)';
         return ;
       } else {
         $results = $results[0];

@@ -12,7 +12,7 @@
         <div class="row">
            <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
              @foreach ($results as $result)
-             <a href="/detail/{{ rawurlencode($result->parent_title) }}"  class="btn btn-default"  style="margin:5px;" ">
+             <a href="/detail/{{ rawurlencode(str_replace('/', '   sla_escape   ',$result->parent_title)) }}"  class="btn btn-default"  style="margin:5px;" >
                {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
              </a>
              @endforeach
