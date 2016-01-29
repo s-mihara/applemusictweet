@@ -1,16 +1,16 @@
   <!DOCTYPE html>
   <html lang="jp">
     <head>
-      <title>「{{$inputs['word']}} 」の検索結果 ｜ アミュツイ</title>
+      <title>「{{empty($inputs['word'])? 'すべて':$inputs['word']}} 」の検索結果 ｜ アミュツイ</title>
       <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','ツイート">
-      <meta name="description" content="「{{$inputs['word']}}」で検索したAppleMusicのアーティスト/プレイリストジャンルです。">
+      <meta name="description" content="「{{empty($inputs['word'])? 'すべて':$inputs['word']}}」で検索したAppleMusicのアーティスト/プレイリストジャンルです。">
       @include('common.head')
     </head>
     <body>
       @include('common.navbar')
       <section class="container" >
         <div >
-          「<span style="font-weight:bold;font-size:105%;">{{$inputs['word']}}</span>」 の検索結果
+          「<span style="font-weight:bold;font-size:105%;">{{empty($inputs['word'])? 'すべて':$inputs['word']}}</span>」 の検索結果
         <div>
         <div class="">
           @include('ad.sp_res_1')

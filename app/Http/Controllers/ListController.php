@@ -55,6 +55,65 @@ class ListController extends Controller {
     }
 
     /**
+     * 全件検索
+     *
+     * @return Response
+     */
+    public function all() {
+      $results = DB::select("select parent_title,count from m_parent_title  order by count desc  limit 1000");
+
+      $inputs = $array = array(
+                        "word" => "",
+                        "period" => ""
+                      );
+      if ($this->_isSmartPhone()) {
+        $blade = 'sp_list';
+      } else {
+        $blade = 'list';
+      }
+      return view($blade ,['inputs' => $inputs,'results' => $results]);
+    }
+
+    /**
+     * プレイリスト検索
+     *
+     * @return Response
+     */
+    public function playlist() {
+      $results = DB::select("select parent_title,count from m_parent_title where parent_title ilike 'apple music%'  order by count desc  limit 1000");
+
+      $inputs = $array = array(
+                        "word" => "apple music",
+                        "period" => ""
+                      );
+      if ($this->_isSmartPhone()) {
+        $blade = 'sp_list';
+      } else {
+        $blade = 'list';
+      }
+      return view($blade ,['inputs' => $inputs,'results' => $results]);
+    }
+    /**
+     * 全件検索
+     *
+     * @return Response
+     */
+    public function random() {
+      $results = DB::select("select parent_title,count from m_parent_title  order by RANDOM()  limit 50");
+
+      $inputs = $array = array(
+                        "word" => "",
+                        "period" => "",
+                        "is_random" =>"true"
+                      );
+      if ($this->_isSmartPhone()) {
+        $blade = 'sp_list';
+      } else {
+        $blade = 'list';
+      }
+      return view($blade ,['inputs' => $inputs,'results' => $results]);
+    }
+    /**
 
     */
 

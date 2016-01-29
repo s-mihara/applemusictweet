@@ -16,12 +16,9 @@ Route::get('/search', 'ListController@search');
 Route::get('/detailModal', 'DetailController@detailModal');
 Route::get('/detail/{parentTitle}', 'DetailController@index');
 Route::get('/sitemap.xml', 'SitemapController@index');
-Route::get('/all', function () {
-    return redirect('search?search=');
-});
-Route::get('/playlist', function () {
-    return redirect('search?search=apple%20music');
-});
+Route::get('/all', 'ListController@all');
+Route::get('/playlist', 'ListController@playlist');
+Route::get('/random', 'ListController@random');
 
 
 /*

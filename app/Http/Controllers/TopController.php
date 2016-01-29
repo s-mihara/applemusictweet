@@ -24,8 +24,9 @@ class TopController extends Controller {
         if ($this->_isSmartPhone()) {
           $blade = 'sp_top';
         } else {
+          $blade = 'top';
           // 一時的PCトップはリダイレクト
-          return redirect('search?search=');
+          //return redirect('search?search=');
         }
         return view($blade ,['inputs' => $inputs,'results' => $results,'results2' => $results2]);
     }

@@ -1,16 +1,38 @@
   <!DOCTYPE html>
   <html lang="jp">
     <head>
-      <title>アミュツイ ｜ Apple Musicの曲やプレイリストをツイートから探す</title>
+      @if (isset($inputs['is_random']))
+      <title>ランダムな検索結果 ｜ アミュツイ</title>
+      <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','ツイート","ランダム">
+      <meta name="description" content="ランダムに検索したAppleMusicのアーティスト/プレイリストジャンルです。">
+      @else
+      <title>「{{empty($inputs['word'])? 'すべて':$inputs['word']}} 」の検索結果 ｜ アミュツイ</title>
       <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','ツイート">
-      <meta name="description" content="AppleMusicにどんな曲やプレイリストがあるのかを探すお手伝いをします。">
+      <meta name="description" content="「{{empty($inputs['word'])? 'すべて':$inputs['word']}}」で検索したAppleMusicのアーティスト/プレイリストジャンルです。">
+      @endif
       @include('common.head')
     </head>
     <body>
       @include('common.navbar')
       <section class="container" >
+
         <div class="row">
            <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+             <div class="panel panel-info" style="margin-top:20px;">
+               <div class="panel-heading">
+                　検索条件
+               </div>
+               <div class="panel-body">
+                 @if (isset($inputs['is_random']))
+                 ランダムに50件表示
+
+                   <a href="random" class="btn btn-default" style="margin:5px;"> <i class="glyphicon glyphicon-refresh"></i> 表示を更新</a>
+                 @else
+                  「{{empty($inputs['word'])? 'すべて':$inputs['word']}}」で検索
+                 @endif
+               </div>
+             </div>
+
              @foreach ($results as $result)
              <a href="/detail/{{ rawurlencode(str_replace('/', '   sla_escape   ',$result->parent_title)) }}"  class="btn btn-default"  style="margin:5px;" >
                {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
