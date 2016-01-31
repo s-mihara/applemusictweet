@@ -8,7 +8,7 @@
     </head>
     <body>
       <!--
-          deploytest用コメント
+          deploytest用コメントagein
         -->
       @include('common.navbar')
       <section class="container" >
