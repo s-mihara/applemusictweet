@@ -2,13 +2,13 @@
   <html lang="jp">
     <head>
       @if (isset($inputs['is_random']))
-      <title>ランダムな検索結果 ｜ アミュツイ</title>
-      <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','ツイート","ランダム">
-      <meta name="description" content="ランダムに検索したAppleMusicのアーティスト/プレイリストジャンルです。">
+      <title>ランダムな検索結果 ｜ アミュツイr</title>
+      <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','検索','ツイート","ランダム">
+      <meta name="description" content="ランダムに検索したAppleMusicのアーティスト/プレイリストジャンルです。お好みのアーティスト/プレイリストを探しましょう。">
       @else
       <title>「{{empty($inputs['word'])? 'すべて':$inputs['word']}} 」の検索結果 ｜ アミュツイ</title>
       <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','ツイート">
-      <meta name="description" content="「{{empty($inputs['word'])? 'すべて':$inputs['word']}}」で検索したAppleMusicのアーティスト/プレイリストジャンルです。">
+      <meta name="description" content="「{{empty($inputs['word'])? 'すべて':$inputs['word']}}」で検索したAppleMusicのアーティスト/プレイリストジャンルです。お好みのアーティスト/プレイリストを探しましょう。">
       @endif
       @include('common.head')
     </head>

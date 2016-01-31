@@ -2,8 +2,8 @@
   <html lang="jp">
     <head>
       <title>アミュツイ ｜ Apple Musicの曲やプレイリストをツイートから探す</title>
-      <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','ツイート'">
-      <meta name="description" content="AppleMusicにどんな曲やプレイリストがあるのかを探すお手伝いをします。">
+      <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','検索','ツイート'">
+      <meta name="description" content="AppleMusicにどんな曲やプレイリストがあるのかを探すお手伝いをします。お気に入りの曲を探しましょう。">
       @include('common.head')
     </head>
     <body>
@@ -18,20 +18,22 @@
           id : ここで指定したidとタイトル部分のdata-parentを合わせる
         -->
 
-        <div class="panel-group" id="accordion" style="margin-top:5px">
+        <div class="panel-group"  style="margin-top:5px">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  おすすめAppleMusic検索 <i style="float:right;"class="glyphicon glyphicon-chevron-down"></i>
+                  おすすめAppleMusic検索
                 </a>
               </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse">
+
               <ul class="list-group">
-               <a class="list-group-item" href="/all">すべて</a>
+                <a class="list-group-item" href="/random">ランダムに50件表示  <i class="glyphicon glyphicon-thumbs-up" style="margin-left:10px;"></i>
+                   <span style="font-size:60%">オススメ</span>
+                </a>
                <a class="list-group-item" href="/playlist">プレイリストの全ジャンルを表示</a>
-               <a class="list-group-item" href="/random">ランダムに50件表示</a>
+               <a class="list-group-item" href="/all">すべて</a>
               </ul>
               <div class="panel-footer">
                 <i class="glyphicon glyphicon-info-sign"></i> 詳細な検索は、上部の
@@ -39,7 +41,6 @@
                 で！
               </div>
 
-            </div>
           </div>
           <div class="panel panel-default">
             <div class="panel-heading">

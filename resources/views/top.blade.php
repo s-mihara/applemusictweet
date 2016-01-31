@@ -2,8 +2,8 @@
   <html lang="jp">
     <head>
       <title>アミュツイ ｜ Apple Musicの曲やプレイリストをツイートから探す</title>
-      <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','ツイート'">
-      <meta name="description" content="AppleMusicにどんな曲やプレイリストがあるのかを探すお手伝いをします。">
+      <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','検索','ツイート'">
+      <meta name="description" content="AppleMusicにどんな曲やプレイリストがあるのかを探すお手伝いをします。アーティスト名やプレイリストジャンルから、お好みのタイトルを探しましょう。">
       @include('common.head')
     </head>
     <body>
@@ -12,8 +12,8 @@
 
         <div class="row">
            <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
-             <div class="panel panel-primary">
-
+            <div style="display:table; width:100%; margin:5px auto;">
+             <div class="panel panel-primary" style="display:table-cell; width:68%;">
                  <div class="panel-heading" style="text-align:center;">
                      <i class="glyphicon glyphicon-search"></i> おすすめAppleMusic検索
                  </div>
@@ -23,10 +23,23 @@
                		<a class="list-group-item" href="/playlist">プレイリストの全ジャンルを表示</a>
                		<a class="list-group-item" href="/random">ランダムに50件表示</a>
                  </ul>
+              </div>
+              <div  style="display:table-cell; width:2%;">
+              </div>
+
+              <div class="panel panel-primary" style="display:table-cell; width:30%;">
+                  <div class="panel-heading" style="text-align:center;">
+                      <i class="glyphicon glyphicon-phone"></i> アミュツイのスマホサイト
+                  </div>
+                  <div class="panel-body" style="text-align:center;">
+                    <img style="zoom:1.1;" src="/img/qr.gif">
+                  </div>
                </div>
+             </div>
 
-             <div class="panel panel-default" >
 
+
+             <div class="panel panel-default" style="clear:both">
                  <div class="panel-heading" style="text-align:center;">
                      <i class="glyphicon glyphicon-king"></i> つぶやきアーティストランキング20(全期間)
                  </div>

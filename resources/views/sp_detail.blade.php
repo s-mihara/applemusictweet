@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="jp">
   <head>
-    <title>AppleMusicで「{{$parentTitle}}」に関してツイートされた曲/プレイリスト | アミュツイ </title>
-    <meta name="keywords" content="'{{$parentTitle}}','apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す'">
-    <meta name="description" content="AppleMusicには「{{$parentTitle}}」のこんな曲やプレイリストがあります">
+    <title>AppleMusicに「{{$parentTitle}}」のこんな曲が。 | アミュツイ </title>
+    <meta name="keywords" content="'{{$parentTitle}}','apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','検索'">
+    <meta name="description" content="AppleMusicには「{{$parentTitle}}」のこんな曲やプレイリストがあります。「{{ $results[0]['title'] }}」とか。">
     @include('common.head')
   </head>
   <body>
@@ -21,7 +21,7 @@
           <?php $i=0 ?>
           @foreach ($results as $result)
           <?php $i++ ?>
-          <tr class="active"><td style="font-size:70%;">{{ $result['tweet_date'] }}　＠{{ $result['t_user_screen_name']}} {{ $result['t_user_name'] }}　</td></tr>
+          <tr class="active"><td style="font-size:80%;">{{ $result['tweet_date'] }}　＠{{ $result['t_user_screen_name']}} {{ $result['t_user_name'] }}　</td></tr>
           <tr><td>
             @if ($result['url_first'] != null and $result['url_first'] != "")
             <a href="{{ $result['url_first'] }}" target="_blank" style="font-color:brack;">

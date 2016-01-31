@@ -20,13 +20,13 @@
 			<form class="navbar-form " action="/search" role="search" method="get">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Search" name="search" value="{{$inputs['word']}}">
-					<select  class="form-control" name="period">
+					<!--<select  class="form-control" name="period">
 						<option value=-1>期間指定なし</option>
-						<!--<option value=0>24時間以内</option>
+						<option value=0>24時間以内</option>
 						<option value=1>1週間以内</option>
 						<option value=2>1ヶ月以内</option>
-					-->
-					</select>
+
+					</select>-->
 				</div>
 				<button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i>  </button>
 			</form>
