@@ -7,6 +7,9 @@
       @include('common.head')
     </head>
     <body>
+      <!--
+          deploytest用コメント
+        -->
       @include('common.navbar')
       <section class="container" >
 

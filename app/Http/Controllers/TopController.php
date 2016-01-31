@@ -13,6 +13,7 @@ class TopController extends Controller {
      */
     public function index()
     {
+      // deployテスト用コメント
         $results = DB::select("select parent_title,count from m_parent_title where parent_title not ilike '%apple music%' order by count desc limit 20");
         $results2 = DB::select("select parent_title,count from m_parent_title where parent_title  ilike '%apple music%' order by count desc limit 20");
 
