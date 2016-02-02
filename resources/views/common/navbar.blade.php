@@ -19,7 +19,7 @@
 		<div class="collapse navbar-collapse" id="navbar1">
 			<form class="navbar-form " action="/search" role="search" method="get">
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Search" name="search" value="{{$inputs['word']}}">
+					<input type="text" class="form-control" placeholder="アーティスト名/プレイリストジャンル" style="width:270px;" name="search" value="{{$inputs['word']}}">
 					<!--<select  class="form-control" name="period">
 						<option value=-1>期間指定なし</option>
 						<option value=0>24時間以内</option>
