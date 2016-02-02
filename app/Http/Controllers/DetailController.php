@@ -31,9 +31,7 @@ class DetailController extends Controller {
         if ($this->_isSmartPhone()) {
           $blade = 'sp_detail';
         } else {
-          // 開発するまではPCもスマホで
-          //$blade = 'detail';
-          $blade = 'sp_detail';
+          $blade = 'detail';
         }
 
         $inputs = $array = array(

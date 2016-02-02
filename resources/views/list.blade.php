@@ -20,7 +20,7 @@
 
         <div class="row">
            <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
-             <div class="panel panel-info" style="margin-top:20px;">
+             <div class="panel panel-primary" style="margin-top:20px;">
                <div class="panel-heading">
                 　検索条件
                </div>

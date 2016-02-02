@@ -1,7 +1,7 @@
   <!DOCTYPE html>
   <html lang="jp">
     <head>
-      <title>アミュツイ ｜ Apple Musicの曲やプレイリストをツイートから探す</title>
+      <title>アミュツイ ｜ Apple Musicの曲やプレイリストを探す</title>
       <meta name="keywords" content="'apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','検索','ツイート'">
       <meta name="description" content="AppleMusicにどんな曲やプレイリストがあるのかを探すお手伝いをします。アーティスト名やプレイリストジャンルから、お好みのタイトルを探しましょう。">
       @include('common.head')
@@ -15,6 +15,7 @@
 
         <div class="row">
            <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+
             <div style="display:table; width:100%; margin:5px auto;">
              <div class="panel panel-primary" style="display:table-cell; width:68%;">
                  <div class="panel-heading" style="text-align:center;">
@@ -35,14 +36,12 @@
                       <i class="glyphicon glyphicon-phone"></i> アミュツイのスマホサイト
                   </div>
                   <div class="panel-body" style="text-align:center;">
-                    <img style="zoom:1.1;" src="/img/qr.gif">
+                    <img style="zoom:0.8;" src="/img/qr.gif"><p>トップに遷移します<i class="glyphicon glyphicon-share-alt"></i></p>
                   </div>
                </div>
              </div>
 
-
-
-             <div class="panel panel-default" style="clear:both">
+             <div class="panel panel-info" style="clear:both">
                  <div class="panel-heading" style="text-align:center;">
                      <i class="glyphicon glyphicon-king"></i> つぶやきアーティストランキング20(全期間)
                  </div>
@@ -63,7 +62,7 @@
 
              </div>
 
-             <div class="panel panel-default" >
+             <div class="panel panel-info" >
 
                  <div class="panel-heading" style="text-align:center;">
                      <i class="glyphicon glyphicon-king"></i> つぶやきプレイリストランキング20(全期間)
