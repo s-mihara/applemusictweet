@@ -21,9 +21,16 @@
           <?php $i=0 ?>
           @foreach ($results as $result)
           <?php $i++ ?>
-          <tr class="active"><td style="font-size:80%;">{{ $result['tweet_date'] }}　＠{{ $result['t_user_screen_name']}} {{ $result['t_user_name'] }}　</td></tr>
+          <tr class="active">
+            <td style="font-size:80%;">{{$result['cnt']}} 回
+            </td>
+          </tr>
           <tr><td>
-            @if ($result['url_first'] != null and $result['url_first'] != "")
+            @if ($result['ex_url_first'] != null and $result['ex_url_first'] != "")
+            <a href="{{ preg_replace('/i=.+$/','',$result['ex_url_first']) }}" target="_blank" style="font-color:brack;">
+              <i class="glyphicon glyphicon-play"></i>
+            　{{ $result['title'] }}</a>
+            @elseif ($result['url_first'] != null and $result['url_first'] != "")
             <a href="{{ $result['url_first'] }}" target="_blank" style="font-color:brack;">
               <i class="glyphicon glyphicon-play"></i>
             　{{ $result['title'] }}</a>

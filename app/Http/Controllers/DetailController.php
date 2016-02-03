@@ -25,8 +25,29 @@ class DetailController extends Controller {
       }
 
       $result = json_decode($results->detail,true);
+      // ツイート日の降順ソート
       array_multisort($result,SORT_DESC ,array_column($result, 'tweet_date'));
-      //return view('detailModal' ,['results' => $result]);
+
+      $returns = array();
+      $uniques = array();
+      $uniqueKeys = 'title';
+      /*
+        同一タイトルの重複を省いて、カウントする。
+        同一タイトルチェックは、とりあえずtitleにする。
+        最終的には、ex_url_firest(リクエストは削除)が使われるのが好ましい。
+      */
+      foreach ($result as $key => $value) {
+        if (!in_array($value[$uniqueKeys],$uniques)) {
+          $value['cnt'] = 1;
+          array_push($returns,$value);
+          array_push($uniques,$value[$uniqueKeys]);
+          // $url_firstのキー
+          // $uniques[count($returns) - 1 ] = $values['url_first'];
+        } else {
+          $returns[array_search($value[$uniqueKeys],$uniques)]['cnt']++;
+        }
+      }
+
 
         if ($this->_isSmartPhone()) {
           $blade = 'sp_detail';
@@ -38,8 +59,7 @@ class DetailController extends Controller {
                           "word" => '',
                           "period" => ''
                         );
-        //print_r($result);
-        return view($blade ,['inputs' => $inputs,'results' => $result,'parentTitle' => $parentTitle]);
+        return view($blade ,['inputs' => $inputs,'results' => $returns,'parentTitle' => $parentTitle]);
     }
 
     /**
@@ -55,8 +75,11 @@ class DetailController extends Controller {
           echo 'error';
           return ;
         }
+        // decode
         $result = json_decode($results->detail,true);
+        // ツイート日の降順ソート
         array_multisort($result,SORT_DESC ,array_column($result, 'tweet_date'));
+
         return view('detailModal' ,['results' => $result]);;
     }
 
