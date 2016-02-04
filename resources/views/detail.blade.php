@@ -52,7 +52,7 @@
                @foreach ($results as $result)
                <?php $i++ ?>
                <tr class="active">
-                 <td style="font-size:80%;">{{$result['cnt']}} 回
+                 <td style="font-size:80%;">{{$result['cnt']}} 回  -- {{substr($result['tweet_date'],0,10)}}
                  </td>
                </tr>
                <tr><td>
