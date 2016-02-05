@@ -44,7 +44,7 @@
              <div style="display:table; width:100%; margin:5px auto;">
               <div class="panel panel-info" style="display:table-cell; width:58%;">
                  <div class="panel-heading" style="text-align:center;">
-                     <i class="glyphicon glyphicon-king"></i> 今週ホットなアーティスト/トップ20
+                     <i class="glyphicon glyphicon-king"></i> 今週ホットなアーティスト/トップ10
                  </div>
                  <div class="panel-body">
                    @foreach ($results_weekly as $result)
@@ -64,7 +64,7 @@
                </div>
                <div class="panel panel-info" style="display:table-cell; width:40%;">
                  <div class="panel-heading" style="text-align:center;">
-                     <i class="glyphicon glyphicon-king"></i> 今週ホットなプレイリスト/トップ20
+                     <i class="glyphicon glyphicon-king"></i> 今週ホットなプレイリスト/トップ10
                  </div>
                  <div class="panel-body">
                    @foreach ($results_weekly2 as $result)
