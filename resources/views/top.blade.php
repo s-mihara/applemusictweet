@@ -30,7 +30,6 @@
               </div>
               <div  style="display:table-cell; width:2%;">
               </div>
-
               <div class="panel panel-primary" style="display:table-cell; width:30%;">
                   <div class="panel-heading" style="text-align:center;">
                       <i class="glyphicon glyphicon-phone"></i> アミュツイのスマホサイト
@@ -41,9 +40,51 @@
                </div>
              </div>
 
+
+             <div style="display:table; width:100%; margin:5px auto;">
+              <div class="panel panel-info" style="display:table-cell; width:58%;">
+                 <div class="panel-heading" style="text-align:center;">
+                     <i class="glyphicon glyphicon-king"></i> 今週ホットなアーティスト/トップ20
+                 </div>
+                 <div class="panel-body">
+                   @foreach ($results_weekly as $result)
+                   <a href="/detail/{{ rawurlencode(str_replace('/', '   sla_escape   ',$result->parent_title)) }}"  class="btn btn-default"  style="margin:5px;" >
+                     {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
+                   </a>
+                   @endforeach
+                   @if (count($results) === 1000)
+                    </br>
+                    <button class="btn btn-warning" type="button" >
+                      表示件数が多いので省略されました。(1,000件まで表示されます)
+                    </button>
+                   @endif
+                 </div>
+               </div>
+               <div  style="display:table-cell; width:2%;">
+               </div>
+               <div class="panel panel-info" style="display:table-cell; width:40%;">
+                 <div class="panel-heading" style="text-align:center;">
+                     <i class="glyphicon glyphicon-king"></i> 今週ホットなプレイリスト/トップ20
+                 </div>
+                 <div class="panel-body">
+                   @foreach ($results_weekly2 as $result)
+                   <a href="/detail/{{ rawurlencode(str_replace('/', '   sla_escape   ',$result->parent_title)) }}"  class="btn btn-default"  style="margin:5px;" >
+                     {{ str_replace('Apple Music','',$result->parent_title) }} <span class="badge">{{ $result->count }}</span>
+                   </a>
+                   @endforeach
+                   @if (count($results) === 1000)
+                    </br>
+                    <button class="btn btn-warning" type="button" >
+                      表示件数が多いので省略されました。(1,000件まで表示されます)
+                    </button>
+                   @endif
+                 </div>
+               </div>
+              </div>
+
              <div class="panel panel-info" style="clear:both">
                  <div class="panel-heading" style="text-align:center;">
-                     <i class="glyphicon glyphicon-king"></i> つぶやきアーティストランキング20(全期間)
+                     <i class="glyphicon glyphicon-king"></i> 全期間アーティストランキング20
                  </div>
                  <div class="panel-body">
                    @foreach ($results as $result)
@@ -58,19 +99,17 @@
                     </button>
                    @endif
                  </div>
-
-
              </div>
 
              <div class="panel panel-info" >
 
                  <div class="panel-heading" style="text-align:center;">
-                     <i class="glyphicon glyphicon-king"></i> つぶやきプレイリストランキング20(全期間)
+                     <i class="glyphicon glyphicon-king"></i> 全期間プレイリストランキング20
                  </div>
                  <div class="panel-body">
                    @foreach ($results2 as $result)
                    <a href="/detail/{{ rawurlencode(str_replace('/', '   sla_escape   ',$result->parent_title)) }}"  class="btn btn-default"  style="margin:5px;" >
-                     {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
+                    {{ str_replace('Apple Music','',$result->parent_title) }} <span class="badge">{{ $result->count }}</span>
                    </a>
                    @endforeach
                    @if (count($results) === 1000)

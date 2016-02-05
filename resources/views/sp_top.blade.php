@@ -62,8 +62,47 @@
           </div>
         </div>
 
-
-
+        <div class="panel panel-danger">
+          <h5>
+            <div class="panel-body">
+                <i class="glyphicon glyphicon-king"></i> ホットなアーティスト10(週間) <i class="glyphicon glyphicon-king"></i>
+            </div>
+          </h5>
+        </div>
+        <div class="row">
+            <?php $i=0; ?>
+             @foreach ($results_weekly as $result)
+              <a href="/detail/{{ rawurlencode($result->parent_title) }}" class="btn btn-default" style="margin:5px;white-space: normal;" >
+                {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
+              </a>
+              <?php $i++; ?>
+              @if ($i === 25 || $i === 50)
+        </div>
+        <div class="row">
+              @endif
+             @endforeach
+      　</div>
+      <div class="panel panel-danger">
+        <h5>
+          <div class="panel-body">
+              <i class="glyphicon glyphicon-king"></i> ホットなプレイリスト10(週間) <i class="glyphicon glyphicon-king"></i>
+          </div>
+        </h5>
+      </div>
+      <div class="row">
+          <?php $i=0; ?>
+           @foreach ($results_weekly2 as $result)
+            <a href="/detail/{{ rawurlencode($result->parent_title) }}" class="btn btn-default" style="margin:5px;white-space: normal;" >
+              {{ str_replace('Apple Music','',$result->parent_title) }}  <span class="badge">{{ $result->count }}</span>
+            </a>
+            <?php $i++; ?>
+            @if ($i === 25 || $i === 50)
+      </div>
+      <div class="row">
+            @endif
+           @endforeach
+    　</div>
+        <div>@include('ad.sp_res_1')</div>
         <div class="panel panel-danger">
           <h5>
             <div class="panel-body">
@@ -85,7 +124,7 @@
              @endforeach
       　</div>
 
-        <div>@include('ad.sp_res_1')</div>
+
              <div class="panel panel-danger" style="margin-top:15px;">
                <h5>
                  <div class="panel-body">
@@ -97,7 +136,7 @@
                  <?php $i=0; ?>
                   @foreach ($results2 as $result)
                    <a href="/detail/{{ rawurlencode($result->parent_title) }}" class="btn btn-default" style="margin:5px;white-space: normal;" >
-                     {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
+                    {{ str_replace('Apple Music','',$result->parent_title) }}  <span class="badge">{{ $result->count }}</span>
                    </a>
                    <?php $i++; ?>
                    @if ($i === 25 || $i === 50)
