@@ -42,7 +42,7 @@
 
 
              <div style="display:table; width:100%; margin:5px auto;">
-              <div class="panel panel-info" style="display:table-cell; width:58%;">
+              <div class="panel panel-default" style="display:table-cell; width:54%;">
                  <div class="panel-heading" style="text-align:center;">
                      <i class="glyphicon glyphicon-king"></i> 今週ホットなアーティスト/トップ10
                  </div>
@@ -62,7 +62,7 @@
                </div>
                <div  style="display:table-cell; width:2%;">
                </div>
-               <div class="panel panel-info" style="display:table-cell; width:40%;">
+               <div class="panel panel-default" style="display:table-cell; width:46%;">
                  <div class="panel-heading" style="text-align:center;">
                      <i class="glyphicon glyphicon-king"></i> 今週ホットなプレイリスト/トップ10
                  </div>
@@ -82,7 +82,7 @@
                </div>
               </div>
 
-             <div class="panel panel-info" style="clear:both">
+             <div class="panel panel-default" style="clear:both">
                  <div class="panel-heading" style="text-align:center;">
                      <i class="glyphicon glyphicon-king"></i> 全期間アーティストランキング20
                  </div>
@@ -101,7 +101,7 @@
                  </div>
              </div>
 
-             <div class="panel panel-info" >
+             <div class="panel panel-default" >
 
                  <div class="panel-heading" style="text-align:center;">
                      <i class="glyphicon glyphicon-king"></i> 全期間プレイリストランキング20

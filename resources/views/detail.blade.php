@@ -15,7 +15,7 @@
            <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
 
              <div style="display:table; width:100%; margin:5px auto;">
-              <div class="panel panel-info" style="display:table-cell; width:68%;">
+              <div class="panel panel-default" style="display:table-cell; width:68%;">
                   <div class="panel-heading" style="text-align:center;">
                       <i class="glyphicon glyphicon-search"></i> おすすめAppleMusic検索
                   </div>
@@ -29,7 +29,7 @@
                <div  style="display:table-cell; width:2%;">
                </div>
 
-               <div class="panel panel-info" style="display:table-cell; width:30%;">
+               <div class="panel panel-default" style="display:table-cell; width:30%;">
                    <div class="panel-heading" style="text-align:center;">
                        <i class="glyphicon glyphicon-phone"></i> アミュツイのスマホサイト
                    </div>
@@ -47,39 +47,28 @@
 
              </div>
 
-        　<table class="table">
+
                <?php $i=0 ?>
                @foreach ($results as $result)
-               <?php $i++ ?>
-               <tr class="active">
-                 <td style="font-size:80%;">{{$result['cnt']}} 回  -- {{substr($result['tweet_date'],0,10)}}
-                 </td>
-               </tr>
-               <tr><td>
-                 @if ($result['ex_url_first'] != null and $result['ex_url_first'] != "")
-                 <a href="{{ preg_replace('/i=.+$/','',$result['ex_url_first']) }}" target="_blank" style="font-color:brack;">
-                   <i class="glyphicon glyphicon-play"></i>
-                 　{{ $result['title'] }}</a>
-                 @elseif ($result['url_first'] != null and $result['url_first'] != "")
-                 <a href="{{ $result['url_first'] }}" target="_blank" style="font-color:brack;">
-                   <i class="glyphicon glyphicon-play"></i>
-                 　{{ $result['title'] }}</a>
-                 @else
-                 {{ $result['title'] }}
-                 @endif
-
-                 @if ($i === 20)
-                 </td></tr>
-             </table>
-
-                 <div>  @include('ad.sp_res_1') </div>
-             <table class="table">
-                   <tr><td>
-                 @endif
-               </td></tr>
-             @endforeach
-         </table>
-
+               <div class="panel panel-default" >
+                   <div class="panel-heading" >
+                       <i class="glyphicon glyphicon-phone"></i> {{$result['cnt']}} 回  -- {{substr($result['tweet_date'],0,10)}}
+                   </div>
+                  <div class="panel-body" >
+                   @if ($result['ex_url_first'] != null and $result['ex_url_first'] != "")
+                   <a href="{{ preg_replace('/i=.+$/','',$result['ex_url_first']) }}" target="_blank" style="font-color:brack;">
+                     <i class="glyphicon glyphicon-play"></i>
+                   　{{ $result['title'] }}</a>
+                   @elseif ($result['url_first'] != null and $result['url_first'] != "")
+                   <a href="{{ $result['url_first'] }}" target="_blank" style="font-color:brack;">
+                     <i class="glyphicon glyphicon-play"></i>
+                   　{{ $result['title'] }}</a>
+                   @else
+                   {{ $result['title'] }}
+                   @endif
+                   </div>
+                </div>
+               @endforeach
             </div>
 
           <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4" >
