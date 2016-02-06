@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="jp">
   <head>
-    <title>AppleMusicに「{{$parentTitle}}」のこんな曲が。 | アミュツイ </title>
+    <title>AppleMusicに「{{$parentTitle}}」のこんな曲が。| アミュツイ </title>
     <meta name="keywords" content="'{{$parentTitle}}','apple music','アップルミュージック','プレイリスト','曲','ミュージックアプリ','探す','検索'">
     <meta name="description" content="AppleMusicには「{{$parentTitle}}」のこんな曲やプレイリストがあります。「{{ $results[0]['title'] }}」とか。">
     @include('common.head')
