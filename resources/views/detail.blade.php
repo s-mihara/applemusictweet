@@ -42,8 +42,15 @@
 
              <div class="panel panel-primary" style="margin-top:20px;">
                <div class="panel-heading">
-                　「<span style="font-weight:bold;font-size:105%;">{{$parentTitle}}</span>」 のタイトル
+                「<span style="font-weight:bold;font-size:105%;">{{$parentTitle}}</span>」 のタイトル
+                <span  style="margin-left:20px;" >
+                  <select  class="selectpicker" style="margin-left:20px;" data-width="fit">
+                    <option data-icon="glyphicon glyphicon-sort-by-order-alt" value = "cnt" > つぶやき回数順</option>
+                    <option data-icon="glyphicon glyphicon-sort-by-order-alt" value ="date" @if(Input::get('sort') == 'date') selected  @endif> つぶやき日付順</option>
+                  </select>
+                </span>
                </div>
+
 
              </div>
 
@@ -75,6 +82,17 @@
             @include('ad.pc_side')
           </div>
       </section>
+      <script type="text/javascript">
+              $(function(){
+                $('.selectpicker').selectpicker({
+                  style: 'btn-default',
+                });
+                $('.selectpicker').on('change',function(){
+                    $href = $(this).val() == "date" ? "./{{$parentTitle}}?sort=date":"./{{$parentTitle}}";
+                    location.href = $href;
+                });
+              });
+      </script>
       @include('common.footer')
 
       @include('ad.google_analytics')

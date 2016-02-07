@@ -12,11 +12,14 @@
       <div >
         「<span style="font-weight:bold;font-size:105%;">{{$parentTitle}}</span>」 のタイトル
       <div>
-      <div style="margin-top:5px;" >
+      <div style="margin-top:5px;margin-bottom:5px;" >
         @include('ad.sp_res_1')
       </div>
 
-
+      <select  class="selectpicker" data-width="fit">
+        <option data-icon="glyphicon glyphicon-sort-by-order-alt" value = "cnt" > つぶやき回数順</option>
+        <option data-icon="glyphicon glyphicon-sort-by-order-alt" value ="date" @if(Input::get('sort') == 'date') selected  @endif> つぶやき日付順</option>
+      </select>
         <table class="table">
           <?php $i=0 ?>
           @foreach ($results as $result)
@@ -49,7 +52,17 @@
         @endforeach
     </table>
     </section>
-
+    <script type="text/javascript">
+            $(function(){
+              $('.selectpicker').selectpicker({
+                style: 'btn-default',
+              });
+              $('.selectpicker').on('change',function(){
+                  $href = $(this).val() == "date" ? "./{{$parentTitle}}?sort=date":"./{{$parentTitle}}";
+                  location.href = $href;
+              });
+            });
+    </script>
     @include('common.footer')
 
 

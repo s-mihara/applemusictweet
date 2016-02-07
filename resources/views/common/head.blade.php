@@ -2,9 +2,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/lib/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+
 <!-- Bootstrap -->
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="/lib/bootstrap-3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="/lib/bootstrap-select/bootstrap-select.min.css">
+<script src="/lib/bootstrap-select/bootstrap-select.min.js"></script>
+
+
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
