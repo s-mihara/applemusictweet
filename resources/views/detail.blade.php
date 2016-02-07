@@ -64,11 +64,11 @@
                   <div class="panel-body" >
                    @if ($result['ex_url_first'] != null and $result['ex_url_first'] != "")
                    <a href="{{ preg_replace('/i=.+$/','',$result['ex_url_first']) }}" target="_blank" style="font-color:brack;">
-                     <i class="glyphicon glyphicon-play"></i>
+                     <i class="glyphicon glyphicon-share-alt"></i>
                    　{{ $result['title'] }}</a>
                    @elseif ($result['url_first'] != null and $result['url_first'] != "")
                    <a href="{{ $result['url_first'] }}" target="_blank" style="font-color:brack;">
-                     <i class="glyphicon glyphicon-play"></i>
+                     <i class="glyphicon glyphicon-share-alt"></i>
                    　{{ $result['title'] }}</a>
                    @else
                    {{ $result['title'] }}

@@ -15,7 +15,13 @@
       <div style="margin-top:5px;margin-bottom:5px;" >
         @include('ad.sp_res_1')
       </div>
+      <div class="panel panel-primary">
 
+          <div class="panel-heading">
+            <i class="glyphicon glyphicon-share-alt"></i> タップでミュージックアプリが起動。
+          </div>
+
+      </div>
       <select  class="selectpicker" data-width="fit">
         <option data-icon="glyphicon glyphicon-sort-by-order-alt" value = "cnt" > つぶやき回数順</option>
         <option data-icon="glyphicon glyphicon-sort-by-order-alt" value ="date" @if(Input::get('sort') == 'date') selected  @endif> つぶやき日付順</option>
@@ -31,11 +37,11 @@
           <tr><td>
             @if ($result['ex_url_first'] != null and $result['ex_url_first'] != "")
             <a href="{{ preg_replace('/i=.+$/','',$result['ex_url_first']) }}" target="_blank" style="font-color:brack;">
-              <i class="glyphicon glyphicon-play"></i>
+              <i class="glyphicon glyphicon-share-alt"></i>
             　{{ $result['title'] }}</a>
             @elseif ($result['url_first'] != null and $result['url_first'] != "")
             <a href="{{ $result['url_first'] }}" target="_blank" style="font-color:brack;">
-              <i class="glyphicon glyphicon-play"></i>
+              <i class="glyphicon glyphicon-share-alt"></i>
             　{{ $result['title'] }}</a>
             @else
             {{ $result['title'] }}
