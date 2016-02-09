@@ -9,19 +9,21 @@
   <body>
     @include('common.navbar')
     <section class="container" >
-      <div >
-        「<span style="font-weight:bold;font-size:105%;">{{$parentTitle}}</span>」 のタイトル
-      <div>
+      <div class="panel panel-primary">
+          <div class="panel-heading">
+            「<span style="font-weight:bold;font-size:105%;">{{$parentTitle}}</span>」 のタイトル
+          </div>
+      </div>
       <div style="margin-top:5px;margin-bottom:5px;" >
         @include('ad.sp_res_1')
       </div>
-      <div class="panel panel-primary">
 
+      <div class="panel ">
           <div class="panel-heading">
-            <i class="glyphicon glyphicon-share-alt"></i> タップでミュージックアプリが起動。
+            <i class="glyphicon glyphicon-info-sign"></i> タイトルをタップでミュージックアプリ起動
           </div>
-
       </div>
+
       <select  class="selectpicker" data-width="fit">
         <option data-icon="glyphicon glyphicon-sort-by-order-alt" value = "cnt" > つぶやき回数順</option>
         <option data-icon="glyphicon glyphicon-sort-by-order-alt" value ="date" @if(Input::get('sort') == 'date') selected  @endif> つぶやき日付順</option>
