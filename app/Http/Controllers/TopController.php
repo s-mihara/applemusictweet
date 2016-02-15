@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Common\amtUtils;
+use App\Http\Controllers\AmtController;
+use Illuminate\Http\Request;
 use DB;
 use Input;
 
@@ -11,7 +13,7 @@ class TopController extends Controller {
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
         /*
           データ抽出
@@ -26,7 +28,7 @@ class TopController extends Controller {
                           "word" => '',
                           "period" => ''
                         );
-        if ($this->_isSmartPhone()) {
+        if (amtUtils::isSmartPhone($_SERVER['HTTP_USER_AGENT']) || $request->has('sp')) {
           $blade = 'sp_top';
         } else {
           $blade = 'top';
@@ -36,12 +38,5 @@ class TopController extends Controller {
         return view($blade ,['inputs' => $inputs,'results' => $results,'results2' => $results2,'results_weekly' => $results_weekly,'results_weekly2' => $results_weekly2]);
     }
 
-    private function _isSmartPhone () {
-      $ua = $_SERVER['HTTP_USER_AGENT'];
-      return  ((strpos($ua, 'Android') !== false) && (strpos($ua, 'Mobile') !== false)
-      || (strpos($ua, 'iPhone') !== false)
-      || (strpos($ua, 'Windows Phone') !== false)) ;
-
-    }
 
 }

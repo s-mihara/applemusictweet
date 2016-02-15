@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Common\amtUtils;
 use DB;
 use Input;
 
@@ -66,7 +66,7 @@ class DetailController extends Controller {
       /*
         スマホ判定
       */
-        if ($this->_isSmartPhone()) {
+        if (amtUtils::isSmartPhone($_SERVER['HTTP_USER_AGENT'])) {
           $blade = 'sp_detail';
         } else {
           $blade = 'detail';
@@ -106,18 +106,6 @@ class DetailController extends Controller {
         array_multisort($result,SORT_DESC ,array_column($result, 'tweet_date'));
 
         return view('detailModal' ,['results' => $result]);;
-    }
-
-    /*
-      スマホ判定
-    */
-
-    private function _isSmartPhone () {
-      $ua = $_SERVER['HTTP_USER_AGENT'];
-      return  ((strpos($ua, 'Android') !== false) && (strpos($ua, 'Mobile') !== false)
-      || (strpos($ua, 'iPhone') !== false)
-      || (strpos($ua, 'Windows Phone') !== false)) ;
-
     }
 
 }
