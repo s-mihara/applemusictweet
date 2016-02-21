@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Common\amtUtils;
+use App\Common\requestScopeUtils;
 use DB;
 use Input;
 
@@ -66,7 +67,7 @@ class DetailController extends Controller {
       /*
         スマホ判定
       */
-        if (amtUtils::isSmartPhone($_SERVER['HTTP_USER_AGENT'])) {
+        if (requestScopeUtils::requestCheckIsSmartPhone()) {
           $blade = 'sp_detail';
         } else {
           $blade = 'detail';

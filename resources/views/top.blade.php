@@ -184,4 +184,5 @@
       </script>
       @include('ad.google_analytics')
     </body>
-  </html>
+    <!--__top__-->
+      </html>

@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Common\amtUtils;
+use App\Common\requestScopeUtils;
 use App\Http\Controllers\AmtController;
 use Illuminate\Http\Request;
 use DB;
@@ -28,12 +29,11 @@ class TopController extends Controller {
                           "word" => '',
                           "period" => ''
                         );
-        if (amtUtils::isSmartPhone($_SERVER['HTTP_USER_AGENT']) || $request->has('sp')) {
+        
+        if (requestScopeUtils::requestCheckIsSmartPhone()){
           $blade = 'sp_top';
         } else {
           $blade = 'top';
-          // 一時的PCトップはリダイレクト
-          //return redirect('search?search=');
         }
         return view($blade ,['inputs' => $inputs,'results' => $results,'results2' => $results2,'results_weekly' => $results_weekly,'results_weekly2' => $results_weekly2]);
     }

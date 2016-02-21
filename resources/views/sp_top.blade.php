@@ -178,4 +178,5 @@
       </script>
         @include('ad.google_analytics')
     </body>
+    <!--__sp_top__-->
   </html>

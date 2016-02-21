@@ -97,4 +97,5 @@
 
       @include('ad.google_analytics')
     </body>
+    <!--__detail__-->
   </html>

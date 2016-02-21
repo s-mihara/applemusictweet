@@ -111,4 +111,5 @@
       </script>
       @include('ad.google_analytics')
     </body>
+    <!--__list__-->
   </html>

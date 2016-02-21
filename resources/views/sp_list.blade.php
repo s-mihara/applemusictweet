@@ -78,4 +78,5 @@
       </script>
         @include('ad.google_analytics')
     </body>
+    <!--__sp_list__-->
   </html>

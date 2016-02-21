@@ -76,4 +76,5 @@
 
     @include('ad.google_analytics')
 </body>
+  <!--__sp_detail__-->
 </html>

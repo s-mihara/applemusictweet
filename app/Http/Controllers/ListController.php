@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Common\amtUtils;
+use App\Common\requestScopeUtils;
 use App\Http\Controllers\Controller;
 use DB;
 use Input;
@@ -21,7 +22,7 @@ class ListController extends Controller {
                           "word" => '',
                           "period" => ''
                         );
-        if (amtUtils::isSmartPhone($_SERVER['HTTP_USER_AGENT'])) {
+        if (requestScopeUtils::requestCheckIsSmartPhone()) {
           $blade = 'sp_list';
         } else {
           $blade = 'list';
@@ -47,7 +48,7 @@ class ListController extends Controller {
                           "period" => $period
                         );
 
-        if (amtUtils::isSmartPhone($_SERVER['HTTP_USER_AGENT'])) {
+        if (requestScopeUtils::requestCheckIsSmartPhone()) {
           $blade = 'sp_list';
         } else {
           $blade = 'list';
@@ -67,7 +68,7 @@ class ListController extends Controller {
                         "word" => "",
                         "period" => ""
                       );
-      if (amtUtils::isSmartPhone($_SERVER['HTTP_USER_AGENT'])) {
+      if (requestScopeUtils::requestCheckIsSmartPhone()) {
         $blade = 'sp_list';
       } else {
         $blade = 'list';
@@ -87,7 +88,7 @@ class ListController extends Controller {
                         "word" => "apple music",
                         "period" => ""
                       );
-      if (amtUtils::isSmartPhone($_SERVER['HTTP_USER_AGENT'])) {
+      if (requestScopeUtils::requestCheckIsSmartPhone()) {
         $blade = 'sp_list';
       } else {
         $blade = 'list';
@@ -107,7 +108,7 @@ class ListController extends Controller {
                         "period" => "",
                         "is_random" =>"true"
                       );
-      if (amtUtils::isSmartPhone($_SERVER['HTTP_USER_AGENT'])) {
+      if (requestScopeUtils::requestCheckIsSmartPhone()) {
         $blade = 'sp_list';
       } else {
         $blade = 'list';
