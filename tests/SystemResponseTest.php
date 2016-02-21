@@ -7,7 +7,10 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class SystemResponseTest extends TestCase
 {
     /**
-     * A basic functional test example.
+     * functional test
+     * 基本的に、全パスを通すテストを実施。
+     * コメントで画面を表す文言を記載しており、200番でかつその文言が含まれていたら
+     * OKとする。
      *
      * @return void
      */
