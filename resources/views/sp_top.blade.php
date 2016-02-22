@@ -71,7 +71,7 @@
         <div class="row">
             <?php $i=0; ?>
              @foreach ($results_weekly as $result)
-              <a href="/detail/{{ rawurlencode($result->parent_title) }}" class="btn btn-default" style="margin:5px;white-space: normal;" >
+              <a href="/detail/{{ rawurlencode($result->parent_title)}}?sort=date" class="btn btn-default" style="margin:5px;white-space: normal;" >
                 {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
               </a>
               <?php $i++; ?>
@@ -91,7 +91,7 @@
       <div class="row">
           <?php $i=0; ?>
            @foreach ($results_weekly2 as $result)
-            <a href="/detail/{{ rawurlencode($result->parent_title) }}" class="btn btn-default" style="margin:5px;white-space: normal;" >
+            <a href="/detail/{{ rawurlencode($result->parent_title)}}?sort=date" class="btn btn-default" style="margin:5px;white-space: normal;" >
               {{ str_replace('Apple Music','',$result->parent_title) }}  <span class="badge">{{ $result->count }}</span>
             </a>
             <?php $i++; ?>

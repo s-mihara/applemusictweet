@@ -48,7 +48,7 @@
                  </div>
                  <div class="panel-body">
                    @foreach ($results_weekly as $result)
-                   <a href="/detail/{{ rawurlencode(str_replace('/', '   sla_escape   ',$result->parent_title)) }}"  class="btn btn-default"  style="margin:5px;" >
+                   <a href="/detail/{{ rawurlencode(str_replace('/', '   sla_escape   ',$result->parent_title))}}?sort=date"  class="btn btn-default"  style="margin:5px;" >
                      {{ $result->parent_title }} <span class="badge">{{ $result->count }}</span>
                    </a>
                    @endforeach
@@ -68,7 +68,7 @@
                  </div>
                  <div class="panel-body">
                    @foreach ($results_weekly2 as $result)
-                   <a href="/detail/{{ rawurlencode(str_replace('/', '   sla_escape   ',$result->parent_title)) }}"  class="btn btn-default"  style="margin:5px;" >
+                   <a href="/detail/{{ rawurlencode(str_replace('/', '   sla_escape   ',$result->parent_title))}}?sort=date"  class="btn btn-default"  style="margin:5px;" >
                      {{ str_replace('Apple Music','',$result->parent_title) }} <span class="badge">{{ $result->count }}</span>
                    </a>
                    @endforeach
